@@ -16,6 +16,10 @@ h1 {
 
 #content .item {
   margin-bottom: 40px;
+  border: 1px solid grey;
+  padding: 5px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
 }
 
 #content .item-content h1 {
