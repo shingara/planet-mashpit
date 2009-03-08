@@ -10,4 +10,5 @@ class Item
   property :created_at, DateTime, :nullable => false
   belongs_to :feed
   validates_is_unique :permalink
+  is_paginated :per_page => 20
 end
