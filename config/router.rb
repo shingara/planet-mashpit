@@ -28,8 +28,11 @@
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
   namespace :admin do
+    match('/').to(:controller => :feeds, :action => :index)
     resources :users
-    resources :feeds
+    authenticate do
+      resources :feeds
+    end
   end
   # RESTful routes
   # resources :posts
