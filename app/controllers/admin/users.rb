@@ -1,6 +1,10 @@
 module Admin
   class Users < Application
     # provides :xml, :yaml, :js
+    
+    # No authentification send if no user
+    before :ensure_authenticated, :if => Proc.new { !User.first.nil? }, :only => [:new, :create]
+    before :ensure_authenticated, :exclude => [:new, :create]
   
     def index
       @user = User.all
