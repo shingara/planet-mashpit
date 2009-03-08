@@ -1,8 +1,12 @@
 <h1>Create User</h1>
 
+<%= error_messages_for @user %>
+
 <%= form_for(@user, :action => resource(:admin, :users)) do %>
   <%= text_field :login, :label => 'login' %><br />
-  <%= text_field :password, :label => 'password' %><br />
-  <%= text_field :password_confirmation, :label => 'password_confirmation' %><br />
+  <%= password_field :password, :label => 'password' %><br />
+  <%= password_field :password_confirmation, :label => 'password_confirmation' %><br />
   <%= submit 'Create' %>
 <% end =%>
+
+<%= link_to 'back', resource(:admin, :users) %>

@@ -40,7 +40,7 @@ module Admin
       @user = User.get(id)
       raise NotFound unless @user
       if @user.update_attributes(user)
-         redirect resource(@user)
+         redirect resource(:admin, @user)
       else
         display @user, :edit
       end
