@@ -1,0 +1,4 @@
+<h1>Articles tagged "<%= params[:tag] %>"</h1>
+<% for item in @items %>
+  <%= partial :item, :item => item %>
+<% end %>

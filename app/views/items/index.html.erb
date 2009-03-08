@@ -1,13 +1,5 @@
 <% for item in @items %>
-  <div id="item-<%= item.id %>" class="item">
-    <div class="item-header">
-      <h1><a href="<%= item.permalink %>"><%=h item.title %></a></h1>
-      <h2>par <%= item.author %> sur <a href="<%= item.feed.url %>"><%= item.feed.name %></a></h2>
-    </div>
-    <div class="item-content">
-      <%= item.content %>
-    </div>
-  </div>
+  <%= partial :item, :item => item %>
 <% end %>
 
 <%= paginate(@current_page, @page_count, :inner_window => 5, :default_css => true, :prev_label => '&laquo; Précédent', :next_label => ' Suivant &raquo;') %>
