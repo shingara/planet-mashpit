@@ -1,0 +1,7 @@
+- parseur feed
+
+- /login => ADMIN or NOT admin
+
+- /admin => (uniquement si authentifié)
+    gestion des flux (ajout/suppression/modification)
+    gestion des utilisateurs
