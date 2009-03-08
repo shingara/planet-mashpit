@@ -13,5 +13,6 @@ class User
   
   property :id,     Serial
   property :login,  String, :nullable => false, :unique => true
+  property :updated_at, DateTime
   
 end

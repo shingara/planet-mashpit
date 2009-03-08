@@ -31,3 +31,6 @@ Feed.all.each do |feed|
   feed.last_fetch_message = "OK, imported #{saved} items"
   feed.save
 end
+
+FileUtils.rm_f(File.join(Merb::Cache[:page_store].stores[0].dir, 'index.html'))
+FileUtils.rm_f(File.join(Merb::Cache[:page_store].stores[0].dir, 'page'))

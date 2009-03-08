@@ -3,3 +3,12 @@
 <h2><%=h @feed.name %></h2>
 URL: <a href="<%=h @feed.feed_url %>"><%=h @feed.feed_url %></a><br />
 Website: <a href="<%=h @feed.url %>"><%=h @feed.url %></a><br />
+Last fetched at: <%=h @feed.last_fetched_at %><br />
+Last fetch status: <%= @feed.last_fetch_successful ? 'OK' : 'KO' %><br />
+Last fetch message: <%=h @feed.last_fetch_message %><br />
+<br />
+<%= link_to 'edit', resource(:admin, @feed, :edit) %>
+,
+<%= delete_button(resource(:admin, @feed), "Delete") %>
+or
+<%= link_to 'back', resource(:admin, :feeds) %>
