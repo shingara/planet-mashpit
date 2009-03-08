@@ -9,9 +9,11 @@ Feed.all.each do |feed|
   feed.last_fetched_at = DateTime.now
   begin
     saved = 0
+    puts "Fetching #{feed.id}"
     pf = RSS::Parser.parse(open(feed.feed_url,"User-Agent" => USER_AGENT).read, false)
+    puts "Parsing feed"
     pf.items.each do |article|
-      t = Item.new({:title => article.title, :permalink => article.link, :feed_id => article.id, :author => article.author, :content => article.description})
+      t = Item.new({:title => article.title, :permalink => article.link, :feed_id => article.id, :author => article.author, :content => article.description, :created_at => article.pubDate})
       saved += 1 if t.save
     end
   rescue
