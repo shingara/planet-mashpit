@@ -14,6 +14,10 @@ Feed.all.each do |feed|
     puts "Parsing feed"
     pf.items.each do |article|
       t = Item.new({:title => article.title, :permalink => article.link, :feed_id => feed.id, :author => article.author, :content => article.description, :created_at => article.pubDate})
+      #tags = []
+      article.categories.each do |tag|
+        t.tag_list << tag.content
+      end
       saved += 1 if t.save
     end
   rescue

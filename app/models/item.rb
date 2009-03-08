@@ -11,4 +11,5 @@ class Item
   belongs_to :feed
   validates_is_unique :permalink
   is_paginated :per_page => 20
+  has_tags_on :tags, :categories
 end

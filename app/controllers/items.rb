@@ -6,4 +6,9 @@ class Items < Application
     display @items
   end
   
+  def tag(tag)
+    @items = Item.tagged_with(tag)
+    display @items
+  end
+  
 end
