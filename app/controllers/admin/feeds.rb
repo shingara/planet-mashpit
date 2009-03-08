@@ -40,7 +40,8 @@ module Admin
     @feed = Feed.get(id)
     raise NotFound unless @feed
     if @feed.update_attributes(feed)
-       redirect resource(:admin, @feed)
+       #redirect resource(:admin, @feed)
+       redirect resource(:admin, :feeds)
     else
       display @feed, :edit
     end
