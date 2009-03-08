@@ -12,6 +12,6 @@ class User
   include DataMapper::Resource
   
   property :id,     Serial
-  property :login,  String
+  property :login,  String, :nullable => false, :unique => true
   
 end
