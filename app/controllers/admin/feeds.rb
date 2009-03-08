@@ -1,4 +1,4 @@
-class Feeds < Application
+class Admin::Feeds < Application
   # provides :xml, :yaml, :js
 
   def index
