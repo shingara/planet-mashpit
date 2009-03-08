@@ -1,0 +1,11 @@
+<div id="item-<%= item.id %>" class="item">
+  <div class="item-header">
+    <h1><a href="<%= item.permalink %>"><%=h item.title %></a></h1>
+    <h2><% if item.author %>par <%= item.author %><% end %> sur <a href="<%= item.feed.url %>"><%= item.feed.name %></a> le <%= item.created_at.strftime('%d/%m/%y à %H:%M')%></h2>
+  </div>
+  <div class="item-content">
+    <%= item.content %>
+    <br />
+    Tags: <% item.tags.each do |t| %><a href="/tag/<%= CGI.escape(t.name) %>"><%= t.name %></a> <% end %>
+  </div>
+</div>

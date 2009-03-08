@@ -35,3 +35,4 @@ dependency "merb_datamapper", merb_gems_version
 
 dependency "dm-is-paginated"
 dependency "merb-pagination"
+dependency "dm-tags"
