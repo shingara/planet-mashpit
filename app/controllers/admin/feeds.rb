@@ -1,4 +1,5 @@
-class Admin::Feeds < Application
+module Admin
+  class Feeds < Application
   # provides :xml, :yaml, :js
 
   def index
@@ -56,3 +57,4 @@ class Admin::Feeds < Application
   end
 
 end # Feeds
+end #  Admin
