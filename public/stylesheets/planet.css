@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, Verdana, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif !important;
   font-size: 12px;
   background-color: #fff;
 }
@@ -16,7 +16,7 @@ h1 {
 
 #content .item {
   margin-bottom: 40px;
-  border: 1px solid grey;
+  border: 1px solid #c0c0c0;
   padding: 5px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -34,6 +34,20 @@ h1 {
   font-size: 105%;
 }
 
+#content .item-content a.tag {
+  color: black;
+  text-decoration: none;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  background-color: #e0e0e0;
+  padding: 2px;
+}
+
+#content .item-content a.tag:hover {
+  background-color: #606060;
+  color: white;
+}
+
 #content .item-header h1,h2 {
   margin: 0;
   padding: 0;
@@ -42,8 +56,25 @@ h1 {
 #content .item-header h2 {
   font-weight: normal;
   font-size: 120%;
+  color: #606060;
+}
+
+#content .item-header h2 a {
+  color: black;
+  font-size: 125%;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #content .item-header h1 a {
-  color: black;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 97%;
+}
+#content .item-header h1 .date {
+  font-size: 13px;
+  float: right;
+  color: grey;
+  padding-top:13px;
 }
