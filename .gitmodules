@@ -1,0 +1,3 @@
+[submodule "vendor/merb-pagination"]
+	path = vendor/merb-pagination
+	url = git://github.com/webs/merb-pagination.git

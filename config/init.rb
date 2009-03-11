@@ -5,7 +5,12 @@ require 'config/dependencies.rb'
 use_orm :datamapper
 use_test :rspec
 use_template_engine :erb
- 
+
+def load_from_source(src)
+  $:.unshift File.join(Merb.root, "vendor/#{src}/lib")
+  require "vendor/#{src}/lib/#{src}.rb"
+end
+
 Merb::Config.use do |c|
   c[:use_mutex] = false
   c[:session_store] = 'cookie'  # can also be 'memory', 'memcache', 'container', 'datamapper
@@ -17,13 +22,14 @@ end
  
 Merb::BootLoader.before_app_loads do
   # This will get executed after dependencies have been loaded but before your app's classes have loaded.
+  load_from_source('merb-pagination') # need github.com/webs/merb-pagination to work
 end
  
 Merb::BootLoader.after_app_loads do
   # This will get executed after your app's classes have been loaded.
-  Merb::Cache.setup do
-    register(:page_store, Merb::Cache::PageStore[Merb::Cache::FileStore], :dir => Merb.root / "public")
-    register(:default, Merb::Cache::AdhocStore[:page_store])
-  end
+  #Merb::Cache.setup do
+  #  register(:page_store, Merb::Cache::PageStore[Merb::Cache::FileStore], :dir => Merb.root / "public")
+  #  register(:default, Merb::Cache::AdhocStore[:page_store])
+  #end
 
 end
